@@ -20,7 +20,7 @@ async function gettingNewJoke(categories) {
         optionsbox.style.display = "none";
         const responce = await fetch("https://hindi-jokes-api.onrender.com/jokes?api_key=689cac4cdccb4f0fdb6319c47b6a");
         const hindijokes = await responce.json();
-        jokesinnerHTML.textContent = hindijokes.jokeContent;
+        jokesinnerHTML.textContent = `" ${hindijokes.jokeContent} "`;
 
     } else {
 
@@ -32,7 +32,7 @@ async function gettingNewJoke(categories) {
 
             if (jokenumber < jokes.total) {
                 const joke = jokes.result[jokenumber].value;
-                jokesinnerHTML.textContent = joke;
+                jokesinnerHTML.textContent = `" ${joke} "`;
                 jokenumber++;
 
             } else {
